@@ -52,7 +52,7 @@ jobs:
           node-version: '16.x'
 
       - name: Run tests
-        run: npm tests
+        run: npm test
 
   sonarcloud:
     name: SonarCloud Analysis
