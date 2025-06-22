@@ -88,7 +88,7 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     uses: VotingApp-DevOps-288126-ORT/voting.infra/.github/workflows/build-push-docker-image.yaml@prod
     with:
-      tag: ${{ github.sha }}-prod
+      tag: ${{ github.sha }}-${{ github.ref_name }}
     secrets: inherit
 
   deploy:
@@ -133,3 +133,4 @@ jobs:
             --env-var "baseUrl=$(kubectl get ingress voting-ingress -n default -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')" \
             --delay-request 500 \
             --timeout-request 10000
+            --bail
