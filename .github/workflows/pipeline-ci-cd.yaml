@@ -174,5 +174,5 @@ jobs:
           password:       ${{ secrets.GMAIL_APP_PASSWORD }}
           from:           ${{ secrets.GMAIL_USERNAME }}
           to:             ${{ secrets.GMAIL_USERNAME }}
-          subject:        "✅ Deploy de vote a ${{ github.ref_name }} exitoso"
+          subject:        "✅ Deploy de result a ${{ github.ref_name }} exitoso"
           body:           ${{ steps.build_email.outputs.body }}
